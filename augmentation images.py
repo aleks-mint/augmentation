@@ -134,9 +134,9 @@ for i in range(1, file_count):
     cv.imwrite(output_path + "8-" + str(i)+".jpg", rotate_image(flip_image(ima3, 1), 75))
     cv.imwrite(output_path + "9-" + str(i)+".jpg", rotate_image(flip_image(ima3, 0), 45))
     cv.imwrite(output_path + "10-" + str(i)+".jpg", rotate_image(flip_image(ima3, 0), 75))
-        #cv.imwrite("C:/Users/Admin/Desktop/aug image/" + "11-" + str(i)+".jpg", elastic_transform_image(ima3))
-        #cv.imwrite("C:/Users/Admin/Desktop/aug image/" + "7-" + str(i)+".jpg", bilateral_filter_image(ima2))
-        #cv.imwrite("C:/Users/Admin/Desktop/aug image/" + "8-" + str(i)+".jpg", gauss_blur_image(ima2))
+   #cv.imwrite("C:/Users/Admin/Desktop/aug image/" + "11-" + str(i)+".jpg", elastic_transform_image(ima3))
+   #cv.imwrite("C:/Users/Admin/Desktop/aug image/" + "7-" + str(i)+".jpg", bilateral_filter_image(ima2))
+   #cv.imwrite("C:/Users/Admin/Desktop/aug image/" + "8-" + str(i)+".jpg", gauss_blur_image(ima2))
         
         
     cv.waitKey(0)
