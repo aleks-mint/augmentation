@@ -99,46 +99,35 @@ def blur_image(image):
     return result
     
 
-
-
-
-
 #путь к папкам исходных и аугментированных фото
-input_path = "C:/Users/Admin/Desktop/images/"
-output_path = "C:/Users/Admin/Desktop/aug images/"
+input_path = "Cycl_S"
+output_path = "Cycl_S_AY/"
+
 
 path, dirs, files = next(os.walk(input_path))
 file_count = len(files)
-print(file_count)
 
+InpDir = os.listdir(input_path)
 
-for i in range(1, file_count):
-    
-    if i <= 9:
-        ima = cv.imread(input_path + "0" + str(i) + ".jpg")
-    else:
-        ima = cv.imread(input_path + str(i) + ".jpg")
-        
+for i in InpDir:
+#    print(i)
+    ima = cv.imread(input_path+'/' + i)
+
     ima2 = gauss_noise_image(ima, 0.1, 0.01)
     ima2 = np.uint8(ima2*255)
         
     ima3 = ima2
         
-    cv.imwrite(output_path + "1-" + str(i)+".jpg", flip_image(ima3, -1))
-    cv.imwrite(output_path + "2-" + str(i)+".jpg", flip_image(ima3, 0))
-    cv.imwrite(output_path + "3-" + str(i)+".jpg", flip_image(ima3, 1))
-    cv.imwrite(output_path + "4-" + str(i)+".jpg", rotate_image(ima3, 45))
-    cv.imwrite(output_path + "5-" + str(i)+".jpg", rotate_image(ima3, 75))
-    cv.imwrite(output_path + "6-" + str(i)+".jpg", ima2)
-    cv.imwrite(output_path + "7-" + str(i)+".jpg", rotate_image(flip_image(ima3, 1), 45))
-    cv.imwrite(output_path + "8-" + str(i)+".jpg", rotate_image(flip_image(ima3, 1), 75))
-    cv.imwrite(output_path + "9-" + str(i)+".jpg", rotate_image(flip_image(ima3, 0), 45))
-    cv.imwrite(output_path + "10-" + str(i)+".jpg", rotate_image(flip_image(ima3, 0), 75))
-   #cv.imwrite("C:/Users/Admin/Desktop/aug image/" + "11-" + str(i)+".jpg", elastic_transform_image(ima3))
-   #cv.imwrite("C:/Users/Admin/Desktop/aug image/" + "7-" + str(i)+".jpg", bilateral_filter_image(ima2))
-   #cv.imwrite("C:/Users/Admin/Desktop/aug image/" + "8-" + str(i)+".jpg", gauss_blur_image(ima2))
-        
-        
-    cv.waitKey(0)
-    cv.destroyAllWindows()
-    
+    cv.imwrite(output_path + "1-" + str(i), flip_image(ima3, -1))
+    cv.imwrite(output_path + "2-" + str(i), flip_image(ima3, 0))
+    cv.imwrite(output_path + "3-" + str(i), flip_image(ima3, 1))
+    cv.imwrite(output_path + "4-" + str(i), rotate_image(ima3, 45))
+    cv.imwrite(output_path + "5-" + str(i), rotate_image(ima3, 75))
+    cv.imwrite(output_path + "6-" + str(i), ima2)
+    cv.imwrite(output_path + "7-" + str(i), rotate_image(flip_image(ima3, 1), 45))
+    cv.imwrite(output_path + "8-" + str(i), rotate_image(flip_image(ima3, 1), 75))
+    cv.imwrite(output_path + "9-" + str(i), rotate_image(flip_image(ima3, 0), 45))
+    cv.imwrite(output_path + "10-" + str(i), rotate_image(flip_image(ima3, 0), 75))
+    cv.imwrite(output_path + "11-" + str(i), elastic_transform_image(ima3))
+    cv.imwrite(output_path + "12-" + str(i), bilateral_filter_image(ima2))
+    cv.imwrite(output_path + "13-" + str(i), gauss_blur_image(ima2))
