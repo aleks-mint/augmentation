@@ -103,9 +103,9 @@ def blur_image(image):
 
 
 
-#
+#путь к папкам исходных и аугментированных фото
 input_path = "C:/Users/Admin/Desktop/images/"
-output_path = "C:/Users/Admin/Desktop/aug image3/"
+output_path = "C:/Users/Admin/Desktop/aug images/"
 
 path, dirs, files = next(os.walk(input_path))
 file_count = len(files)
